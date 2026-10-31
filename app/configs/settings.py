@@ -43,10 +43,12 @@ class Settings(BaseSettings):
 
     # Ingestion mode
     use_temporal_ingestion: bool = False
+    upload_dir: str = "uploads"
+
 
     # Optional RAGAS evaluation (Stage 6)
     enable_ragas_evaluation: bool = False
-
+  
 
 @lru_cache
 def get_settings() -> Settings:
