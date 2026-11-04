@@ -1,7 +1,7 @@
 import uuid
 from app.configs.settings import get_settings
 from app.repositories.vector_store_repository import VectorStoreRepository
-from app.services.document_service import DocumentService
+from app.services.docuemnt_service import DocumentService
 from pathlib import Path
 from app.utils import get_logger
 

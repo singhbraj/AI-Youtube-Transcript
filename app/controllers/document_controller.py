@@ -20,8 +20,8 @@ async def upload_documents(
     settings = get_settings()
     if not files:
         raise HTTPException(status_code=400, detail="No files provided. At least one file is required.")
-    if len(files) > settings.max_upload_files:
-        raise HTTPException(status_code=400, detail=f"Maximum number of files exceeded. Maximum is {settings.max_upload_files} files.")
+    if len(files) > settings.max_files_per_upload:
+        raise HTTPException(status_code=400, detail=f"Maximum number of files exceeded. Maximum is {settings.max_files_per_upload} files.")
     
     file_pairs: list[tuple[str, bytes]] = []
 
