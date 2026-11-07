@@ -37,7 +37,7 @@ class TemporalIngestionService:
             "message": "Batch ingestion workflow started",
             "workflow_id": handle.id,
             "batch_id": batch_id,
-            "run_id": handle.run_id,
+            "run_id": handle.result_run_id,
             "files_total": len(files),
             "filenames": [file.filename for file in files],
         }
@@ -71,3 +71,6 @@ class TemporalIngestionService:
             "current_filename": None,
             "file_results": [],
         }
+
+
+
