@@ -1,0 +1,18 @@
+# Local dev only: raise per-event payload limits (default 2 MB).
+# See https://docs.temporal.io/references/dynamic-configuration
+#
+# Note: gRPC still enforces a separate per-RPC size limit (~4 MB on many server
+# builds). Payloads above that need the claim-check pattern (chunk files on disk).
+
+limit.blobSize.warn:
+  - value: 67108864 # 64 MB
+    constraints: {}
+
+limit.blobSize.error:
+  - value: 134217728 # 128 MB
+    constraints: {}
+
+# Allow persisting large activity results in a single history transaction.
+system.transactionSizeLimit:
+  - value: 134217728 # 128 MB
+    constraints: {}

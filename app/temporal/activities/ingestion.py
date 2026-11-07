@@ -2,7 +2,7 @@ from pathlib import Path
 
 from langchain_core.documents import Document
 from app.repositories.vector_store_repository import VectorStoreRepository
-from app.services.document_service import DocumentService
+from app.services.docuemnt_service import DocumentService
 from app.utils import get_logger
 from temporalio import activity
 

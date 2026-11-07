@@ -1,4 +1,4 @@
-# AI-Youtube-Transcript
+# YoutubeTranscriptRag
 
 RAG demo with FastAPI, Qdrant, and Temporal.
 
@@ -11,8 +11,8 @@ RAG demo with FastAPI, Qdrant, and Temporal.
 ## Clone and setup
 
 ```bash
-git clone https://github.com/singhbraj/AI-Youtube-Transcript.git
-cd AI-Youtube-Transcript
+git clone https://github.com/singhsanket143/Youtube-Transcript-Naive-Rag-Python-Langchain-Temporal-GPT.git
+cd YoutubeTranscriptRag
 
 cp .env.example .env
 # Edit .env and set OPENAI_API_KEY (required for RAG features)
@@ -38,6 +38,12 @@ Start backing services (Qdrant, Postgres, Temporal, Temporal UI):
 
 ```bash
 docker compose up -d
+```
+
+Temporal loads payload limits from `temporal/dynamicconfig/docker.yaml`. After you change that file, recreate the Temporal container so it picks up the new config:
+
+```bash
+docker compose up -d temporal --force-recreate
 ```
 
 Run the FastAPI app on the host:
